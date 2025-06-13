@@ -3,7 +3,7 @@ export const personalData = {
   displayName: "Amaresh Kumar",
   tagline: "Android Developer & UI/UX Designer",
   profileImageUrl: "/placeholder.svg?height=400&width=400", // Replace with actual image URL
-  resumeUrl: "https://drive.google.com/file/d/1uEhsal1BMvkNoZSwbLNokkjClFzMFm6M/view?usp=drive_link", // Replace with actual resume URL
+  resumeUrl: "https://jmvafurftybulfrixduw.supabase.co/storage/v1/object/public/portfolio-assets//amareshResume.pdf", // Replace with actual resume URL
   bio: [
     "Android developer passionate about crafting intuitive mobile apps, integrating cloud services, and ensuring smooth user experiences using modern tech like Kotlin and Jetpack Compose.",
   ],
