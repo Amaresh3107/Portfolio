@@ -130,12 +130,12 @@ export default function Skills() {
               variants={itemVariants}
               className="glass-card p-3 sm:p-4 rounded-lg flex flex-col items-center text-center"
             >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mb-2 sm:mb-3 flex items-center justify-center text-light-grey">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mb-2 sm:mb-3 flex items-center justify-center text-light-grey/80">
                 {getSkillIcon(skill.name)}
               </div>
               <h4 className="font-medium mb-1 text-xs sm:text-sm md:text-base">{skill.name}</h4>
-              <div className="w-full bg-gray-600 h-2 sm:h-2.5 rounded-full mt-1 sm:mt-2 overflow-hidden">
-                <div className="h-full rounded-full bg-light-grey" style={{ width: `${skill.level}%` }} />
+              <div className="w-full bg-gray-700/50 h-2 sm:h-2.5 rounded-full mt-1 sm:mt-2 overflow-hidden">
+                <div className="h-full rounded-full bg-light-grey/60" style={{ width: `${skill.level}%` }} />
               </div>
             </motion.div>
           ))}

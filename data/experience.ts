@@ -30,7 +30,7 @@ export const experienceData = {
       role: "Developer",
       title: "Personal Portfolio",
       company: "Internshala",
-      period: "Dec 2021 - Jan 2022",
+      period: "Mar 2024 - Apr 2024",
       liveUrl: "https://v0.dev/chat/amresh-kumar-portfolio-DMgAdOELZC7",
       responsibilities: [
         "Created a personal vlog website with a focus on dynamic content display and smooth scrolling experience.",

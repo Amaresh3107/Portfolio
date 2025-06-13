@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { seoData } from "@/data/seo"
+import { personalData } from "@/data/personal"
 import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 import { Analytics } from "@/components/analytics"
@@ -55,12 +56,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: personalData.faviconUrl || "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -70,6 +71,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href={personalData.faviconUrl || "/favicon.ico"} />
+      </head>
       <body className={`${inter.className} bg-black text-light-grey antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
           <Navbar />
