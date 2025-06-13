@@ -1,7 +1,7 @@
 export const experienceData = {
   work: [
     {
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
       title: "Internship",
       company: "Take It Smart (OPC) Pvt. Ltd",
       period: "Feb 2025 - May 2025",
@@ -22,9 +22,9 @@ export const experienceData = {
       responsibilities: [
         "Developing a real-time beach safety app leveraging Kafka for data streaming and Redis for fast alert retrieval.",
         "Designing and implementing a microservices backend using Spring Boot and Flask.",
-        "Deploying on AWS to ensure scalability and reliability."
+        "Deploying on AWS to ensure scalability and reliability.",
       ],
-      technologies: ["Spring Boot","Kotlin","Jetpack Compose", "Flask", "Kafka", "Redis", "AWS"],
+      technologies: ["Spring Boot", "Kotlin", "Jetpack Compose", "Flask", "Kafka", "Redis", "AWS"],
     },
     {
       role: "Developer",
@@ -46,9 +46,7 @@ export const experienceData = {
       institution: "Visvesvaraya Technological University",
       period: "2021 - 2025",
       description: "Focused on software development and database management",
-      achievements: [
-        "First Class with 74.8 CGPA",
-      ],
+      achievements: ["First Class with 74.8 CGPA"],
     },
   ],
 }
