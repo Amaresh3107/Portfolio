@@ -1,5 +1,7 @@
 "use client"
 
+import React from "react"
+
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
@@ -33,7 +35,7 @@ import {
   SiBash,
 } from "react-icons/si"
 import { FaCode, FaCheckCircle, FaBug, FaUsers, FaFileExcel, FaTerminal } from "react-icons/fa"
-import type { JSX } from "react/jsx-runtime" // Import JSX to fix the undeclared variable error
+import { JSX } from "react"
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -70,7 +72,7 @@ export default function Skills() {
 
   // Map skill names to their respective icons
   const getSkillIcon = (skillName: string) => {
-    const iconMap: Record<string, JSX.Element> = {
+    const iconMap: Record<string, React.ReactNode> = {
       React: <SiReact className="w-full h-full" />,
       "Next.js": <SiNextdotjs className="w-full h-full" />,
       TypeScript: <SiTypescript className="w-full h-full" />,
