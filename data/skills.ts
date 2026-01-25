@@ -4,151 +4,106 @@ export const skillsData = {
       name: "Frontend Development",
       skills: [
         {
-          name: "React",
-          level: 100,
-          icon: "React",
-        },
-        {
-          name: "Next.js",
-          level: 100,
-          icon: "Next",
-        },
-        {
-          name: "TypeScript",
-          level: 100,
-          icon: "TS",
-        },
-        {
-          name: "Tailwind CSS",
-          level: 100,
-          icon: "TW",
-        },
-        {
-          name: "JavaScript",
-          level: 100,
-          icon: "JS",
-        },
-        {
           name: "HTML5",
-          level: 100,
+          level: 85,
           icon: "HTML",
         },
         {
           name: "CSS3",
-          level: 100,
+          level: 80,
           icon: "CSS",
         },
-      ],
-    },
-    {
-      name: "Backend Development",
-      skills: [
         {
-          name: "Spring Boot",
-          level: 100,
-          icon: "SB",
+          name: "JavaScript",
+          level: 75,
+          icon: "JS",
         },
         {
-          name: "MongoDB",
-          level: 100,
-          icon: "MDB",
-        },
-        {
-          name: "MySQL",
-          level: 100,
-          icon: "SQL",
-        },
-        {
-          name: "REST API",
-          level: 100,
-          icon: "API",
-        },
-        {
-          name: "GraphQL",
-          level: 100,
-          icon: "GQL",
-        },
-        {
-          name: "Firebase",
-          level: 100,
-          icon: "FB",
+          name: "Responsive Design",
+          level: 70,
+          icon: "RWD",
         },
       ],
     },
     {
-      name: "Mobile Development",
-      skills: [
-        {
-          name: "Android",
-          level: 100,
-          icon: "AND",
-        },
-        {
-          name: "Kotlin",
-          level: 100,
-          icon: "KT",
-        },
-        {
-          name: "Jetpack Compose",
-          level: 100,
-          icon: "JC",
-        },
-        {
-          name: "Java",
-          level: 100,
-          icon: "JV",
-        },
-      ],
-    },
-    {
-      name: "UI/UX Design",
-      skills: [
-        {
-          name: "Figma",
-          level: 100,
-          icon: "FG",
-        },
-        {
-          name: "Adobe XD",
-          level: 100,
-          icon: "XD",
-        },
-        {
-          name: "Sketch",
-          level: 100,
-          icon: "SK",
-        },
-        {
-          name: "Wireframing",
-          level: 100,
-          icon: "WF",
-        },
-      ],
-    },
-    {
-      name: "DevOps & Tools",
+      name: "DevOps (Learning)",
       skills: [
         {
           name: "Git",
-          level: 100,
+          level: 75,
           icon: "GIT",
         },
         {
-          name: "Docker",
-          level: 100,
-          icon: "DKR",
+          name: "GitHub",
+          level: 70,
+          icon: "GH",
         },
         {
-          name: "AWS",
-          level: 100,
-          icon: "AWS",
+          name: "Linux",
+          level: 70,
+          icon: "LINUX",
+        },
+        {
+          name: "Bash Basics",
+          level: 60,
+          icon: "BASH",
+        },
+        {
+          name: "CI/CD (Learning)",
+          level: 50,
+          icon: "CI",
+        },
+      ],
+    },
+    {
+      name: "Quality & Tools",
+      skills: [
+        {
+          name: "Quality Assurance",
+          level: 85,
+          icon: "QA",
+        },
+        {
+          name: "Test Case Design",
+          level: 80,
+          icon: "TEST",
+        },
+        {
+          name: "Bug Tracking & Reporting",
+          level: 85,
+          icon: "BUG",
+        },
+        {
+          name: "Amazon Internal Tools",
+          level: 80,
+          icon: "AMZ",
+        },
+        {
+          name: "Cross-team Collaboration",
+          level: 85,
+          icon: "TEAM",
+        },
+      ],
+    },
+    {
+      name: "Tools & Platforms",
+      skills: [
+        {
+          name: "MS Excel (Advanced)",
+          level: 80,
+          icon: "EXCEL",
+        },
+        {
+          name: "VS Code",
+          level: 80,
+          icon: "VSC",
         },
         {
           name: "Vercel",
-          level: 100,
+          level: 65,
           icon: "VCL",
         },
       ],
     },
   ],
-}
+};
