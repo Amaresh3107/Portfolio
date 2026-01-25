@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import SiBash from "react-icons/si/lib/icons/bash" // Import SiBash icon
 
 import { useState } from "react"
 import { motion } from "framer-motion"
@@ -32,7 +33,6 @@ import {
   SiOpenjdk,
   SiGithub,
   SiLinux,
-  SiBash,
 } from "react-icons/si"
 import { FaCode, FaCheckCircle, FaBug, FaUsers, FaFileExcel, FaTerminal } from "react-icons/fa"
 import { JSX } from "react"
@@ -98,7 +98,7 @@ export default function Skills() {
       Vercel: <SiVercel className="w-full h-full" />,
       GitHub: <SiGithub className="w-full h-full" />,
       Linux: <SiLinux className="w-full h-full" />,
-      "Bash Basics": <SiBash className="w-full h-full" />,
+      "Bash Basics": <FaTerminal className="w-full h-full" />,
       "Responsive Design": <FaCode className="w-full h-full" />,
       "Quality Assurance": <FaCheckCircle className="w-full h-full" />,
       "Test Case Design": <FaCheckCircle className="w-full h-full" />,
