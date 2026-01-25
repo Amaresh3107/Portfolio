@@ -28,8 +28,11 @@ import {
   SiAmazonwebservices,
   SiVercel,
   SiOpenjdk,
+  SiGithub,
+  SiLinux,
+  SiBash,
 } from "react-icons/si"
-import { FaCode } from "react-icons/fa"
+import { FaCode, FaCheckCircle, FaBug, FaUsers, FaFileExcel, FaTerminal } from "react-icons/fa"
 import type { JSX } from "react/jsx-runtime" // Import JSX to fix the undeclared variable error
 
 export default function Skills() {
@@ -91,6 +94,19 @@ export default function Skills() {
       Docker: <SiDocker className="w-full h-full" />,
       AWS: <SiAmazonwebservices className="w-full h-full" />,
       Vercel: <SiVercel className="w-full h-full" />,
+      GitHub: <SiGithub className="w-full h-full" />,
+      Linux: <SiLinux className="w-full h-full" />,
+      "Bash Basics": <SiBash className="w-full h-full" />,
+      "Responsive Design": <FaCode className="w-full h-full" />,
+      "Quality Assurance": <FaCheckCircle className="w-full h-full" />,
+      "Test Case Design": <FaCheckCircle className="w-full h-full" />,
+      "Bug Tracking & Reporting": <FaBug className="w-full h-full" />,
+      "Amazon Internal Tools": <FaTerminal className="w-full h-full" />,
+      "Cross-team Collaboration": <FaUsers className="w-full h-full" />,
+      "MS Excel (Advanced)": <FaFileExcel className="w-full h-full" />,
+      "VS Code": <FaCode className="w-full h-full" />,
+      "Jetpack Compose": <SiAndroid className="w-full h-full" />,
+      "CI/CD (Learning)": <SiGit className="w-full h-full" />,
     }
 
     return iconMap[skillName] || <FaCode className="w-full h-full" />
