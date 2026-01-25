@@ -1,6 +1,20 @@
 export const experienceData = {
   work: [
     {
+      role: "Quality Analyst",
+      title: "Fulltime",
+      company: "Amazon",
+      period: "Sep 2025 - Present",
+      responsibilities: [
+        "Ensure product quality and reliability in large-scale systems",
+        "Work with cross-functional engineering teams",
+        "Identify defects, edge cases, and process improvements",
+        "Follow structured workflows and documentation standards",
+      ],
+      technologies: ["SQL", "Data Analysis", "MS Excel", "Amazon's Internal Tool"],
+    },
+    
+    {
       role: "Full Stack Developer",
       title: "Internship",
       company: "Take It Smart (OPC) Pvt. Ltd",
