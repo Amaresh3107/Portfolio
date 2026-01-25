@@ -43,6 +43,10 @@ export const skillsData = {
           level: 70,
           icon: "LINUX",
         },
+        { name: "MySQL", 
+          level: 75, 
+          icon: "SQL" 
+        },
         {
           name: "Bash Basics",
           level: 60,
