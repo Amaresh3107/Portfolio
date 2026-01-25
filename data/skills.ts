@@ -26,6 +26,23 @@ export const skillsData = {
       ],
     },
     {
+      name: "Mobile Development",
+      skills: [
+        { name: "Java", 
+          level: 70, 
+          icon: "JAVA" 
+        },
+        { name: "Kotlin", 
+          level: 75, 
+          icon: "KOTLIN" 
+        },
+        { name: "Jetpack Compose", 
+          level: 65, 
+          icon: "JC" 
+        },
+      ],
+    },
+    {
       name: "DevOps (Learning)",
       skills: [
         {
