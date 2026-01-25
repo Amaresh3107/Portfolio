@@ -53,6 +53,11 @@ export const skillsData = {
           level: 50,
           icon: "CI",
         },
+        {
+          name: "Docker (Learning)",
+          level: 40,
+          icon: "DOCKER",
+        },
       ],
     },
     {
