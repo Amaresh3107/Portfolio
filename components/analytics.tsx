@@ -4,6 +4,12 @@ import { useEffect } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 import Script from "next/script"
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void
+  }
+}
+
 export function Analytics() {
   const pathname = usePathname()
   const searchParams = useSearchParams()

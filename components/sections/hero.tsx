@@ -1,79 +1,83 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { ArrowDown } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, Github, Linkedin } from "lucide-react"
 import { personalData } from "@/data/personal"
-import { motion } from "framer-motion"
+import { contactData } from "@/data/contact"
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return
-
-      const { clientX, clientY } = e
-      const { left, top, width, height } = containerRef.current.getBoundingClientRect()
-
-      const x = (clientX - left) / width - 0.5
-      const y = (clientY - top) / height - 0.5
-
-      containerRef.current.style.setProperty("--mouse-x", `${x * 20}px`)
-      containerRef.current.style.setProperty("--mouse-y", `${y * 20}px`)
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+  const github = contactData.socialLinks.find((l) => l.platform === "github")?.url
+  const linkedin = contactData.socialLinks.find((l) => l.platform === "linkedin")?.url
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 sm:px-6"
-      ref={containerRef}
-    >
-      <div
-        className="absolute inset-0 z-0 opacity-30"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 245, 245, 0.1) 0%, transparent 50%)",
-        }}
-      />
-
-      <div className="container mx-auto max-w-4xl text-center z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter mb-4 sm:mb-6 gradient-text leading-tight">
-            {personalData.displayName}
+    <section className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 sm:pt-24 pb-20">
+      <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+        <div>
+          <p className="stage-label mb-4">pipeline: portfolio / stage: intro</p>
+          <h1 className="font-mono text-4xl sm:text-5xl font-bold leading-tight text-light-grey">
+            {personalData.fullName}
           </h1>
-        </motion.div>
+          <p className="mt-3 text-lg text-amber font-mono">{personalData.role}</p>
+          <p className="mt-5 max-w-lg text-dim leading-relaxed">{personalData.heroSummary}</p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <p className="text-lg sm:text-xl md:text-2xl text-light-grey/80 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            {personalData.tagline}
-          </p>
-        </motion.div>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 rounded-md bg-amber px-5 py-2.5 text-sm font-semibold text-ink hover:opacity-90 transition-opacity"
+            >
+              View my work <ArrowRight size={16} />
+            </Link>
+            {personalData.resumeUrl ? (
+              <a
+                href={personalData.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-wire px-5 py-2.5 text-sm font-semibold text-light-grey hover:border-amber/50 transition-colors"
+              >
+                Download Resume
+              </a>
+            ) : null}
+            <div className="flex items-center gap-3 ml-1">
+              {github && (
+                <a href={github} target="_blank" rel="noopener noreferrer" className="text-dim hover:text-amber">
+                  <Github size={20} />
+                </a>
+              )}
+              {linkedin && (
+                <a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-dim hover:text-amber">
+                  <Linkedin size={20} />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <a
-            href="#about"
-            className="inline-flex items-center justify-center glass px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base text-light-grey hover:bg-light-grey/10 transition-all duration-300"
-          >
-            Explore My Work
-          </a>
-        </motion.div>
-      </div>
-
-      {/* Bouncing Arrow */}
-      <div className="absolute bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-light-grey/50" />
+        {/* Terminal panel */}
+        <div className="terminal overflow-hidden">
+          <div className="terminal-bar">
+            <span className="terminal-dot bg-fail" />
+            <span className="terminal-dot bg-amber" />
+            <span className="terminal-dot bg-signal" />
+            <span className="ml-3 font-mono text-xs text-dim">amaresh@devops:~</span>
+          </div>
+          <div className="p-5 font-mono text-sm leading-relaxed">
+            <p className="text-dim">
+              <span className="text-signal">amaresh@devops</span>
+              <span className="text-light-grey">:~$</span>{" "}
+              <span className="text-light-grey">{personalData.heroCommand}</span>
+            </p>
+            <p className="mt-2 text-light-grey">{personalData.role}</p>
+            <p className="mt-3 text-dim"># currently building</p>
+            <p className="text-light-grey">→ Antigravity/Duskft — Dockerized full-stack platform on AWS EC2</p>
+            <p className="mt-3 text-dim"># currently learning</p>
+            <p className="text-light-grey">→ Terraform</p>
+            <p className="mt-4">
+              <span className="text-signal">amaresh@devops</span>
+              <span className="text-light-grey">:~$</span>
+              <span className="ml-1 inline-block h-4 w-2 bg-amber animate-blink align-middle" />
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )

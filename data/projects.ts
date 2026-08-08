@@ -1,71 +1,56 @@
-export const projectsData = [
+type Project = {
+  id: number
+  title: string
+  period: string
+  description: string
+  imageUrl: string
+  categories: string[]
+  technologies: string[]
+  githubUrl?: string
+  liveUrl?: string
+}
+
+export const projectsData: Project[] = [
   {
-    id: 8,
-    title: "FlashCart",
-    period: "Jan 2025 - Mar 2025",
+    id: 1,
+    title: "Antigravity (Duskft)",
+    period: "Recent months — actively maintained",
     description:
-      "Developed a feature-rich grocery shopping application enabling users to browse, order, and track household items.",
+      "A full-stack B2B wholesale clothing platform built for Duskft: FastAPI + MongoDB backend, React 19 frontend, with a storefront, customer portal, and a 14-module admin panel. Containerized with Docker (multi-stage builds for FastAPI + React + MongoDB), orchestrated with Docker Compose, deployed to an Ubuntu EC2 instance, and shipped through a GitHub Actions CI/CD pipeline. Debugged real infrastructure issues in production: OOM failures during frontend builds (fixed with swap + NODE_OPTIONS), Docker build-cache disk exhaustion, and stale baked-in backend URLs after an EC2 migration.",
     imageUrl: "/placeholder.svg?height=300&width=500",
-    categories: ["Mobile App", "Full Stack"],
-    technologies: ["Android Studio", "Jetpack Compose", "Kotlin", "Firebase", "MVVM"],
-    //liveUrl: "https://example.com/ecommerce",
-    githubUrl: "https://github.com/amaresh3107/FlashCart",
-  },
-  {
-    id: 5,
-    title: "Landmark Recognizer",
-    period: "Oct 2024 - Dec 2024",
-    description: "Developed a real-time landmark recognition application using on-device machine learning.",
-    imageUrl: "/placeholder.svg?height=300&width=500",
-    categories: ["Mobile App", "API Integration"],
-    technologies: ["Android Studio", "Jetpack Compose", "Kotlin", "TensorFlow Lite"],
-    //liveUrl: "https://example.com/ecommerce",
-    githubUrl: "https://github.com/Amaresh3107/LandmarkRecognizer",
-  },
-  {
-    id: 4,
-    title: "TaskPilot",
-    period: "Aug 2024 - Oct 2024",
-    description:
-      "Developed a full-stack task management application with a robust backend to support task organization and reminders.",
-    imageUrl: "/placeholder.svg?height=300&width=500",
-    categories: ["Mobile App", "Full Stack"],
-    technologies: ["Kotlin", "Ktor", "Jetpack Compose", "MySQL", "REST API"],
-    //liveUrl: "https://example.com/taskapp",
-    githubUrl: "https://github.com/amaresh3107/taskpilot",
-  },
-  {
-    id: 3,
-    title: "Konix Trade Execution Platform",
-    period: "May 2024 - Jul 2024",
-    description:
-      "Real-time stock trading simulation platform with secure APIs for Android integration. Features robust backend architecture for handling trading workflows.",
-    imageUrl: "/placeholder.svg?height=300&width=500",
-    categories: ["Full Stack"],
-    technologies: ["Ktor", "Kotlin", "Jetpack Compose", "Docker", "MySQL", "REST API"],
-    //liveUrl: "https://example.com/finance",
-    githubUrl: "https://github.com/username/finance",
+    categories: ["Full Stack", "DevOps"],
+    technologies: [
+      "FastAPI",
+      "MongoDB",
+      "React 19",
+      "Docker",
+      "Docker Compose",
+      "GitHub Actions",
+      "AWS EC2",
+      "Nginx",
+    ],
+    githubUrl: "https://github.com/Amaresh3107",
   },
   {
     id: 2,
-    title: "Personal Portfolio",
-    period: "Mar 2024 - Apr 2024",
-    description: "A customizable portfolio website template for creative professionals and developers to showcase projects, skills, and experience with a modern and responsive design.",
+    title: "Brew & Chill",
+    period: "Earlier project",
+    description:
+      "A CI/CD reference project built to learn deployment automation end-to-end: GitHub Actions pipeline, EC2 hosting, Nginx as a reverse proxy, and rollback logic on failed deploys. This pipeline design was later reused and extended as the template for the Antigravity/Duskft deployment.",
     imageUrl: "/placeholder.svg?height=300&width=500",
-    categories: ["UI/UX", "Frontend"],
-    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
-    //liveUrl: "https://example.com/portfolio",
-    githubUrl: "https://github.com/Amaresh3107/Portfolio",
+    categories: ["DevOps", "CI/CD"],
+    technologies: ["GitHub Actions", "AWS EC2", "Nginx", "Bash"],
+    githubUrl: "https://github.com/Amaresh3107",
   },
   {
-    id: 1,
-    title: "Weather Forecasting App",
-    period: "Jan 2024 - Feb 2024",
-    description: "A weather forecast application with location-based services and interactive maps.",
+    id: 3,
+    title: "devboard",
+    period: "Earlier project",
+    description:
+      "A dockerized three-tier application — React frontend, Go backend, PostgreSQL database — built to practice containerizing a full stack with a compiled backend language and a relational database, outside the Node/Mongo stack used elsewhere.",
     imageUrl: "/placeholder.svg?height=300&width=500",
-    categories: ["Mobile App", "API Integration"],
-    technologies: ["Kotlin", "Jetpack Compose", "OpenWeatherMap API", "Geolocation"],
-    //liveUrl: "https://example.com/weather",
-    githubUrl: "https://github.com/username/weather",
+    categories: ["Full Stack", "Docker"],
+    technologies: ["React", "Go", "PostgreSQL", "Docker"],
+    githubUrl: "https://github.com/Amaresh3107",
   },
 ]

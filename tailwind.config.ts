@@ -13,6 +13,14 @@ const config: Config = {
         "dark-grey": "#1a1a1a",
         black: "#000000",
         "light-grey": "#f5f5f5",
+        ink: "#0B0F14",
+        panel: "#11161D",
+        wire: "#232B36",
+        amber: "#F5A623",
+        signal: "#5FD068",
+        fail: "#E5534B",
+        dim: "#8B96A5",
+        paper: "#ECE9E2",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -49,14 +57,25 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",
+        blink: "blink 1.1s step-end infinite",
+        typing: "typing 2.4s steps(30, end)",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+        typing: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
         },
       },
       backgroundImage: {

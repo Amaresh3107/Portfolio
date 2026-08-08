@@ -1,9 +1,10 @@
 export const seoData = {
-  title: "AMARESH KUMAR | Android Developer & UI/UX Designer",
+  title: "Amaresh Kumar | DevOps & Cloud Engineer",
   description:
-    "Portfolio of AMARESH KUMAR, a Android Developer and UI/UX Designer specializing in modern mobile applications and user experiences.",
-  keywords: "AMARESH KUMAR, Android Developer, UI/UX Designer, Application Development, React, Next.js, Portfolio",
-  siteUrl: "https://amareshkumar.com",
+    "Portfolio of Amaresh Kumar — a Quality Specialist at Amazon self-taught in DevOps, AWS, Docker, and CI/CD, building and deploying real full-stack projects.",
+  keywords:
+    "Amaresh Kumar, DevOps Engineer, Cloud Engineer, AWS, Docker, GitHub Actions, CI/CD, Terraform, Site Reliability Engineer, Portfolio",
+  siteUrl: "https://www.amaresh.info",
   ogImage: "/og-image.jpg",
   twitterHandle: "@amaresh3107",
 }

@@ -1,44 +1,77 @@
 import type { Metadata } from "next"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import Hero from "@/components/sections/hero"
-import About from "@/components/sections/about"
-import Skills from "@/components/sections/skills"
-import Projects from "@/components/sections/projects"
-import Experience from "@/components/sections/experience"
-import Contact from "@/components/sections/contact"
 import { seoData } from "@/data/seo"
-import InitialLoader from "@/components/ui/initial-loader"
+import { skillsData } from "@/data/skills"
+import { projectsData } from "@/data/projects"
 
 export const metadata: Metadata = {
   title: seoData.title,
   description: seoData.description,
   keywords: seoData.keywords,
-  openGraph: {
-    title: seoData.title,
-    description: seoData.description,
-    images: [{ url: seoData.ogImage, width: 1200, height: 630 }],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: seoData.title,
-    description: seoData.description,
-    images: [seoData.ogImage],
-  },
 }
 
 export default function Home() {
+  const topSkills = skillsData.categories.flatMap((c) => c.skills).slice(0, 8)
+  const featured = projectsData.slice(0, 2)
+
   return (
-    <main className="relative min-h-screen bg-black text-light-grey">
-      <InitialLoader />
-      <div className="relative z-10">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </div>
-      <div className="fixed inset-0 z-0 bg-gradient-to-b from-dark-grey to-black opacity-50" />
+    <main>
+      <Hero />
+
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-20">
+        <p className="stage-label mb-4">core toolset</p>
+        <div className="flex flex-wrap gap-2">
+          {topSkills.map((s) => (
+            <span
+              key={s.name}
+              className="rounded-md border border-wire bg-panel px-3 py-1.5 font-mono text-xs text-light-grey"
+            >
+              {s.name}
+            </span>
+          ))}
+        </div>
+        <Link
+          href="/skills"
+          className="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-amber hover:opacity-80"
+        >
+          View all skills <ArrowRight size={14} />
+        </Link>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-24">
+        <p className="stage-label mb-4">featured projects</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {featured.map((p) => (
+            <div key={p.id} className="dev-card p-6">
+              <h3 className="text-light-grey font-semibold text-lg">{p.title}</h3>
+              <p className="mt-3 text-sm text-dim leading-relaxed line-clamp-4">{p.description}</p>
+            </div>
+          ))}
+        </div>
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-1.5 mt-6 text-xs font-mono text-amber hover:opacity-80"
+        >
+          View all projects <ArrowRight size={14} />
+        </Link>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-24">
+        <div className="dev-card p-8 text-center">
+          <p className="stage-label justify-center mb-3">let's work together</p>
+          <h2 className="font-mono text-2xl font-bold text-light-grey">
+            Interested in collaborating or hiring?
+          </h2>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 mt-6 rounded-md bg-amber px-6 py-2.5 text-sm font-semibold text-ink hover:opacity-90 transition-opacity"
+          >
+            Contact me <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
     </main>
   )
 }

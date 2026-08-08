@@ -1,153 +1,49 @@
 export const skillsData = {
   categories: [
     {
-      name: "Frontend Development",
+      name: "Cloud",
       skills: [
-        {
-          name: "React",
-          level: 100,
-          icon: "React",
-        },
-        {
-          name: "Next.js",
-          level: 100,
-          icon: "Next",
-        },
-        {
-          name: "TypeScript",
-          level: 100,
-          icon: "TS",
-        },
-        {
-          name: "Tailwind CSS",
-          level: 100,
-          icon: "TW",
-        },
-        {
-          name: "JavaScript",
-          level: 100,
-          icon: "JS",
-        },
-        {
-          name: "HTML5",
-          level: 100,
-          icon: "HTML",
-        },
-        {
-          name: "CSS3",
-          level: 100,
-          icon: "CSS",
-        },
+        { name: "AWS (EC2, S3, IAM)", level: 100, icon: "AWS" },
+        { name: "Vercel", level: 100, icon: "VCL" },
+        { name: "Render", level: 100, icon: "RDR" },
       ],
     },
     {
-      name: "Backend Development",
+      name: "Containers & Orchestration",
       skills: [
-        {
-          name: "Spring Boot",
-          level: 100,
-          icon: "SB",
-        },
-        {
-          name: "MongoDB",
-          level: 100,
-          icon: "MDB",
-        },
-        {
-          name: "MySQL",
-          level: 100,
-          icon: "SQL",
-        },
-        {
-          name: "REST API",
-          level: 100,
-          icon: "API",
-        },
-        {
-          name: "GraphQL",
-          level: 100,
-          icon: "GQL",
-        },
-        {
-          name: "Firebase",
-          level: 100,
-          icon: "FB",
-        },
+        { name: "Docker", level: 100, icon: "DKR" },
+        { name: "Docker Compose", level: 100, icon: "DC" },
       ],
     },
     {
-      name: "Mobile Development",
+      name: "CI/CD",
       skills: [
-        {
-          name: "Android",
-          level: 100,
-          icon: "AND",
-        },
-        {
-          name: "Kotlin",
-          level: 100,
-          icon: "KT",
-        },
-        {
-          name: "Jetpack Compose",
-          level: 100,
-          icon: "JC",
-        },
-        {
-          name: "Java",
-          level: 100,
-          icon: "JV",
-        },
+        { name: "GitHub Actions", level: 100, icon: "GHA" },
+        { name: "Rollback strategies", level: 100, icon: "RB" },
       ],
     },
     {
-      name: "UI/UX Design",
+      name: "Infrastructure as Code",
+      skills: [{ name: "Terraform (in progress)", level: 40, icon: "TF" }],
+    },
+    {
+      name: "Systems & Scripting",
       skills: [
-        {
-          name: "Figma",
-          level: 100,
-          icon: "FG",
-        },
-        {
-          name: "Adobe XD",
-          level: 100,
-          icon: "XD",
-        },
-        {
-          name: "Sketch",
-          level: 100,
-          icon: "SK",
-        },
-        {
-          name: "Wireframing",
-          level: 100,
-          icon: "WF",
-        },
+        { name: "Linux", level: 100, icon: "LNX" },
+        { name: "Bash", level: 100, icon: "SH" },
+        { name: "Nginx", level: 100, icon: "NGX" },
+        { name: "Git", level: 100, icon: "GIT" },
       ],
     },
     {
-      name: "DevOps & Tools",
+      name: "Application Development",
       skills: [
-        {
-          name: "Git",
-          level: 100,
-          icon: "GIT",
-        },
-        {
-          name: "Docker",
-          level: 100,
-          icon: "DKR",
-        },
-        {
-          name: "AWS",
-          level: 100,
-          icon: "AWS",
-        },
-        {
-          name: "Vercel",
-          level: 100,
-          icon: "VCL",
-        },
+        { name: "Python", level: 100, icon: "PY" },
+        { name: "FastAPI", level: 100, icon: "API" },
+        { name: "React", level: 100, icon: "RCT" },
+        { name: "TypeScript / JavaScript", level: 100, icon: "TS" },
+        { name: "MongoDB", level: 100, icon: "MDB" },
+        { name: "PostgreSQL", level: 100, icon: "SQL" },
       ],
     },
   ],

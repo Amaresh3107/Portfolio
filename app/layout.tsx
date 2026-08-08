@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { seoData } from "@/data/seo"
 import { personalData } from "@/data/personal"
@@ -9,7 +9,8 @@ import Footer from "@/components/layout/footer"
 import { Analytics } from "@/components/analytics"
 import { Suspense } from "react"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" })
 
 export const metadata: Metadata = {
   metadataBase: new URL(seoData.siteUrl),
@@ -74,7 +75,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href={personalData.faviconUrl || "/favicon.ico"} />
       </head>
-      <body className={`${inter.className} bg-black text-light-grey antialiased`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-ink text-light-grey antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
           <Navbar />
           {children}

@@ -6,6 +6,12 @@
   --dark-grey: #1a1a1a;
   --black: #000000;
   --light-grey: #f5f5f5;
+  --ink: #0b0f14;
+  --panel: #11161d;
+  --wire: #232b36;
+  --amber: #f5a623;
+  --signal: #5fd068;
+  --dim: #8b96a5;
 }
 
 html {
@@ -13,8 +19,108 @@ html {
 }
 
 body {
-  background-color: var(--black);
+  background-color: var(--ink);
   color: var(--light-grey);
+  background-image: linear-gradient(rgba(245, 166, 35, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: -1px -1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Terminal window */
+.terminal {
+  background: var(--panel);
+  border: 1px solid var(--wire);
+  border-radius: 10px;
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.7);
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--wire);
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Pipeline nav */
+.pipeline-rail {
+  position: relative;
+}
+
+.pipeline-rail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--wire);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.pipeline-node {
+  position: relative;
+  z-index: 1;
+}
+
+.pipeline-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Section label */
+.stage-label {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.stage-label::before {
+  content: "// ";
+  color: var(--amber);
+}
+
+/* Card */
+.dev-card {
+  background: var(--panel);
+  border: 1px solid var(--wire);
+  border-radius: 10px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.dev-card:hover {
+  border-color: rgba(245, 166, 35, 0.4);
+  transform: translateY(-3px);
+}
+
+.diff-add {
+  color: var(--signal);
+}
+.diff-add::before {
+  content: "+ ";
 }
 
 /* Glass effect */
