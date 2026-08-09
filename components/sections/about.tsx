@@ -1,10 +1,11 @@
 import { personalData } from "@/data/personal"
 import { certificationsData, certificationsEmptyState } from "@/data/certifications"
+import Reveal from "@/components/ui/reveal"
 
 export default function About() {
   return (
     <div className="space-y-16">
-      <div className="grid md:grid-cols-[1fr_1.4fr] gap-10">
+      <Reveal className="grid md:grid-cols-[1fr_1.4fr] gap-10">
         <div className="dev-card p-1 aspect-square overflow-hidden rounded-lg">
           <img
             src={personalData.profileImageUrl || "/placeholder-user.jpg"}
@@ -19,9 +20,9 @@ export default function About() {
             </p>
           ))}
         </div>
-      </div>
+      </Reveal>
 
-      <div>
+      <Reveal delay={100}>
         <p className="stage-label mb-4">details</p>
         <div className="grid sm:grid-cols-2 gap-4">
           {personalData.details.map((d) => (
@@ -31,9 +32,9 @@ export default function About() {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
 
-      <div>
+      <Reveal delay={150}>
         <p className="stage-label mb-4">licenses &amp; certifications</p>
         {certificationsData.length === 0 ? (
           <div className="dev-card px-5 py-6">
@@ -57,7 +58,7 @@ export default function About() {
             ))}
           </div>
         )}
-      </div>
+      </Reveal>
     </div>
   )
 }

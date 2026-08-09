@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, MapPin, Github, Linkedin, Twitter, Loader2 } from "lucide-react"
+import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Loader2 } from "lucide-react"
 import { contactData } from "@/data/contact"
-import { sendContactForm } from "@/lib/actions"
 
 const iconMap: Record<string, any> = { github: Github, linkedin: Linkedin, twitter: Twitter }
 
@@ -16,13 +15,44 @@ export default function Contact() {
     setStatus("sending")
     setError("")
     const form = new FormData(e.currentTarget)
+    const name = String(form.get("name") || "")
+    const email = String(form.get("email") || "")
+    const subject = String(form.get("subject") || "")
+    const message = String(form.get("message") || "")
+
+    if (!name || !email || !subject || !message) {
+      setStatus("error")
+      setError("All fields are required")
+      return
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      setStatus("error")
+      setError("Invalid email address")
+      return
+    }
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+    if (!accessKey) {
+      setStatus("error")
+      setError("Contact form isn't configured yet — missing NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY.")
+      return
+    }
+
     try {
-      await sendContactForm({
-        name: String(form.get("name") || ""),
-        email: String(form.get("email") || ""),
-        subject: String(form.get("subject") || ""),
-        message: String(form.get("message") || ""),
+      // Submitted directly from the browser (not a server action) — Web3Forms'
+      // own examples all do this client-side, since server-to-server requests
+      // can get flagged by their bot protection and served an HTML page instead
+      // of JSON. The access key is designed to be public, so this is safe.
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ access_key: accessKey, name, email, subject, message }),
       })
+      const result = await res.json()
+      if (!result.success) {
+        throw new Error(result.message || "Failed to send message. Please try again.")
+      }
       setStatus("sent")
       ;(e.target as HTMLFormElement).reset()
     } catch (err: any) {
@@ -34,16 +64,28 @@ export default function Contact() {
   return (
     <div className="grid md:grid-cols-[1fr_1.3fr] gap-10">
       <div className="space-y-4">
-        <div className="dev-card p-5 flex items-center gap-3">
-          <Mail size={18} className="text-amber" />
-          <a href={`mailto:${contactData.email}`} className="text-sm text-light-grey hover:text-amber">
-            {contactData.email}
-          </a>
-        </div>
-        <div className="dev-card p-5 flex items-center gap-3">
-          <MapPin size={18} className="text-amber" />
-          <span className="text-sm text-light-grey">{contactData.location}</span>
-        </div>
+        {contactData.email && (
+          <div className="dev-card p-5 flex items-center gap-3">
+            <Mail size={18} className="text-amber" />
+            <a href={`mailto:${contactData.email}`} className="text-sm text-light-grey hover:text-amber">
+              {contactData.email}
+            </a>
+          </div>
+        )}
+        {contactData.location && (
+          <div className="dev-card p-5 flex items-center gap-3">
+            <MapPin size={18} className="text-amber" />
+            <span className="text-sm text-light-grey">{contactData.location}</span>
+          </div>
+        )}
+        {contactData.phone && (
+          <div className="dev-card p-5 flex items-center gap-3">
+            <Phone size={18} className="text-amber" />
+            <a href={`tel:${contactData.phone.replace(/\s+/g, "")}`} className="text-sm text-light-grey hover:text-amber">
+              {contactData.phone}
+            </a>
+          </div>
+        )}
         <div className="dev-card p-5 flex items-center gap-4">
           {contactData.socialLinks.map((link) => {
             const Icon = iconMap[link.platform]

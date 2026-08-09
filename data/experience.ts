@@ -1,14 +1,18 @@
-// Dates marked "VERIFY" are placeholders — swap in your exact dates.
+// Dates and details sourced from Amaresh_Kumar_Resume.pdf.
 export const experienceData = {
   work: [
     {
-      role: "Quality Specialist",
+      role: "Quality Analyst",
       title: "Full-time",
       company: "Amazon",
-      period: "VERIFY START – Present",
+      period: "September 2025 – Present",
       responsibilities: [
-        "Working in a non-technical quality role at Amazon while self-studying DevOps and cloud engineering outside working hours.",
-        "Applying an eye for process, defects, and root-cause analysis — habits that carry directly into debugging infrastructure and CI/CD pipelines.",
+        "Investigated delivery and return defects across multiple regions by analyzing operational data and identifying root causes to ensure accurate case resolution.",
+        "Evaluated failure patterns across large datasets using multiple internal tools to support quality objectives and operational decision-making.",
+        "Applied structured problem-solving to ambiguous, complex cases — determining appropriate resolutions based on documented processes and data interpretation.",
+        "Monitored performance across Excellent, Acceptable, and Unacceptable quality categories.",
+        "Maintained high accuracy and productivity simultaneously while consistently meeting quality benchmarks across assigned workloads.",
+        "Collaborated with internal stakeholders to ensure cases were resolved in compliance with established operational standards.",
       ],
       technologies: [],
     },
@@ -20,22 +24,36 @@ export const experienceData = {
       title: "#90DaysOfDevOps Challenge",
       period: "Ongoing",
       description:
-        "Structured, self-paced DevOps learning: Linux, Git, scripting, server administration, GitHub Actions, and Docker fundamentals, applied directly to real projects rather than isolated exercises.",
+        "Building projects through the #90DaysOfDevOps learning challenge, with hands-on experience deploying applications on AWS EC2 using CI/CD automation.",
     },
     {
-      title: "Antigravity / Duskft — Full-stack SaaS build & deployment",
-      period: "Recent months",
+      title: "NSS Coordinator",
+      period: "College",
       description:
-        "Designed, built, containerized, and deployed a full-stack B2B platform end-to-end: Docker multi-stage builds, Docker Compose, an Ubuntu EC2 deployment, and a GitHub Actions CI/CD pipeline. Debugged real production issues — OOM failures during frontend builds, Docker build-cache disk exhaustion, and stale baked-in environment variables after an EC2 migration.",
+        "Coordinated activities for the National Service Scheme (NSS) during college alongside coursework.",
     },
   ],
 
   education: [
     {
-      degree: "Bachelor of Engineering in Computer Science and Engineering",
-      institution: "Visvesvaraya Technological University",
+      degree: "B.E. in Computer Science",
+      institution: "Sambhram Institute of Technology (affiliated to Visvesvaraya Technological University)",
       period: "2021 - 2025",
-      description: "Focused on software development and database management",
+      description: "Aggregate: 74.8%",
+      achievements: [],
+    },
+    {
+      degree: "11th - 12th (PCM)",
+      institution: "Bihar Board",
+      period: "2019 - 2021",
+      description: "Aggregate: 65.0%",
+      achievements: [],
+    },
+    {
+      degree: "10th",
+      institution: "Central Board of Secondary Education",
+      period: "2019",
+      description: "Aggregate: 74.6%",
       achievements: [],
     },
   ],

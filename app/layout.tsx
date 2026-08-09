@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   description: seoData.description,
   keywords: seoData.keywords,
-  authors: [{ name: "AMARESH KUMAR" }],
-  creator: "AMARESH KUMAR",
+  authors: [{ name: personalData.fullName }],
+  creator: personalData.fullName,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -58,8 +58,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: personalData.faviconUrl || "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
   generator: "v0.dev",
@@ -72,9 +70,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="icon" href={personalData.faviconUrl || "/favicon.ico"} />
-      </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-ink text-light-grey antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
           <Navbar />

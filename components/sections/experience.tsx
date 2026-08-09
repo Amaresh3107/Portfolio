@@ -1,4 +1,5 @@
 import { experienceData } from "@/data/experience"
+import Reveal from "@/components/ui/reveal"
 
 export default function Experience() {
   return (
@@ -6,8 +7,9 @@ export default function Experience() {
       <div>
         <p className="stage-label mb-6">work experience</p>
         <div className="space-y-6">
-          {experienceData.work.map((job) => (
-            <div key={job.role} className="dev-card p-6">
+          {experienceData.work.map((job, i) => (
+            <Reveal key={job.role} delay={i * 80}>
+            <div className="dev-card p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-light-grey font-semibold">
                   {job.role} <span className="text-dim font-normal">· {job.company}</span>
@@ -32,6 +34,7 @@ export default function Experience() {
                 </div>
               )}
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -39,14 +42,16 @@ export default function Experience() {
       <div>
         <p className="stage-label mb-6">self-directed devops track</p>
         <div className="space-y-6">
-          {experienceData.selfStudy.map((item) => (
-            <div key={item.title} className="dev-card p-6">
+          {experienceData.selfStudy.map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
+            <div className="dev-card p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-light-grey font-semibold">{item.title}</h3>
                 <span className="font-mono text-xs text-signal">{item.period}</span>
               </div>
               <p className="mt-3 text-sm text-dim leading-relaxed">{item.description}</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -54,8 +59,9 @@ export default function Experience() {
       <div>
         <p className="stage-label mb-6">education</p>
         <div className="space-y-6">
-          {experienceData.education.map((edu) => (
-            <div key={edu.degree} className="dev-card p-6">
+          {experienceData.education.map((edu, i) => (
+            <Reveal key={edu.degree} delay={i * 80}>
+            <div className="dev-card p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-light-grey font-semibold">{edu.degree}</h3>
                 <span className="font-mono text-xs text-dim">{edu.period}</span>
@@ -63,6 +69,7 @@ export default function Experience() {
               <p className="text-sm text-amber mt-1">{edu.institution}</p>
               <p className="mt-2 text-sm text-dim">{edu.description}</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

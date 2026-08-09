@@ -17,13 +17,15 @@ export default function Footer() {
           <span className="text-signal">✓</span> build passing · {year} © {personalData.displayName}
         </p>
         <div className="flex items-center gap-4">
-          <a
-            href={`mailto:${contactData.email}`}
-            aria-label="Email"
-            className="text-dim hover:text-amber transition-colors"
-          >
-            <Mail size={18} />
-          </a>
+          {contactData.email && (
+            <a
+              href={`mailto:${contactData.email}`}
+              aria-label="Email"
+              className="text-dim hover:text-amber transition-colors"
+            >
+              <Mail size={18} />
+            </a>
+          )}
           {contactData.socialLinks.map((link) => {
             const Icon = iconMap[link.platform]
             if (!Icon) return null

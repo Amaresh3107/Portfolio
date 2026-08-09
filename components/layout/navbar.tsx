@@ -35,7 +35,7 @@ export default function Navbar() {
                 <div key={link.name} className="pipeline-node flex items-center bg-ink px-3">
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 font-mono text-xs uppercase tracking-wider"
+                    className="nav-underline group flex items-center gap-2 font-mono text-xs uppercase tracking-wider"
                   >
                     <span
                       className={`pipeline-dot ${

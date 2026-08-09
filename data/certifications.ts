@@ -14,7 +14,15 @@ export type Certification = {
   credentialUrl?: string
 }
 
-export const certificationsData: Certification[] = []
+export const certificationsData: Certification[] = [
+  {
+    name: "AWS Certified AI Practitioner",
+    issuer: "Amazon Web Services",
+    date: "In progress",
+    imageUrl: "",
+    credentialUrl: "",
+  },
+]
 
 // Shown when certificationsData is empty.
 export const certificationsEmptyState =
