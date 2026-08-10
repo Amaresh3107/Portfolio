@@ -4,11 +4,11 @@ import Link from "next/link"
 import { ArrowRight, Github, Linkedin } from "lucide-react"
 import { personalData } from "@/data/personal"
 import { contactData } from "@/data/contact"
+import InteractiveTerminal from "@/components/sections/interactive-terminal"
 
 export default function Hero() {
   const github = contactData.socialLinks.find((l) => l.platform === "github")?.url
   const linkedin = contactData.socialLinks.find((l) => l.platform === "linkedin")?.url
-  const githubHandle = github?.replace(/\/+$/, "").split("/").pop()
 
   return (
     <section className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-16 sm:pt-24 pb-20 overflow-hidden">
@@ -55,38 +55,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Terminal panel */}
-        <div className="terminal overflow-hidden animate-fade-in animate-delay-200">
-          <div className="terminal-bar">
-            <span className="terminal-dot bg-fail" />
-            <span className="terminal-dot bg-amber" />
-            <span className="terminal-dot bg-signal" />
-            <span className="ml-3 font-mono text-xs text-dim">amaresh@devops:~</span>
-          </div>
-          <div className="p-5 font-mono text-sm leading-relaxed">
-            <p className="text-dim">
-              <span className="text-signal">amaresh@devops</span>
-              <span className="text-light-grey">:~$</span>
-              <span
-                className="typed-line text-light-grey align-bottom"
-                style={{ "--char-count": personalData.heroCommand.length } as React.CSSProperties}
-              >
-                {personalData.heroCommand}
-              </span>
-            </p>
-            <p className="mt-2 text-light-grey animate-fade-in animate-delay-300 opacity-0">
-              {personalData.fullName} <span className="text-dim">(@{githubHandle})</span>
-            </p>
-            <p className="text-dim animate-fade-in animate-delay-300 opacity-0">{personalData.tagline}</p>
-            <p className="mt-3 text-dim animate-fade-in animate-delay-400 opacity-0"># currently building</p>
-            <p className="text-light-grey animate-fade-in animate-delay-400 opacity-0"> → {personalData.currentProject}</p>
-            <p className="mt-4 animate-fade-in animate-delay-500 opacity-0">
-              <span className="text-signal">amaresh@devops</span>
-              <span className="text-light-grey">:~$</span>
-              <span className="ml-1 inline-block h-4 w-2 bg-amber animate-blink align-middle" />
-            </p>
-          </div>
-        </div>
+        {/* Interactive terminal panel */}
+        <InteractiveTerminal />
       </div>
     </section>
   )
