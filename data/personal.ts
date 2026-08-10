@@ -30,7 +30,7 @@ export const personalData = {
 
   // Drop your photo in /public (e.g. public/profile.jpg) then set this to "/profile.jpg".
   // Or paste a hosted image URL (Supabase, Cloudinary, etc).
-  profileImageUrl: "/profile.jpg",
+  profileImageUrl: "https://uafprjucxpleamuqqpkv.supabase.co/storage/v1/object/public/portfolio/profile/profile.jpg",
 
   bio: [
     "I'm an aspiring AWS Cloud & DevOps Engineer with hands-on experience containerizing and deploying full-stack applications on AWS EC2 using Docker, Docker Compose, GitHub Actions, Linux, and Shell scripting.",
