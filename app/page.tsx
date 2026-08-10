@@ -62,13 +62,13 @@ export default function Home() {
         <div className="dev-card p-8 text-center">
           <p className="stage-label justify-center mb-3">let's work together</p>
           <h2 className="font-mono text-2xl font-bold text-light-grey">
-            Interested in collaborating or hiring?
+            Open to DevOps & Cloud opportunities.
           </h2>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 mt-6 rounded-md bg-amber px-6 py-2.5 text-sm font-semibold text-ink hover:opacity-90 transition-opacity"
           >
-            Contact me <ArrowRight size={16} />
+            Get in Touch <ArrowRight size={16} />
           </Link>
         </div>
       </section>
